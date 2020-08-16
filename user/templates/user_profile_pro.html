@@ -1,0 +1,88 @@
+{% extends "_homebase.html" %}
+    {% load static %}
+
+{% block title %}{{user.first_name}} Profile{% endblock %}
+{% block description %}{{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock %}
+
+{% block header %}{% include "_header.html" %}{% endblock %}
+{% block sidebar %}{% include "_sidebar.html" %}{% endblock %}
+
+{% block slider %}{% include "_slider.html" %}{% endblock %}
+
+{% block body %}
+
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="/">Home</a></li>
+				<li class="active">Profile Professionnel</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+                <div class="col-md-3">
+					{% include 'user_panel.html' %}
+                </div>
+
+                <div class="col-md-9">
+                    <div class="billing-details">
+						<div class="section-title">
+                            <h3 class="title">Profile Professionnel Inf.</h3>
+					    </div>
+
+                        {% for rs in profile_pro %}
+                        <table class="shopping-cart-table table">
+                           <tr>
+                                <th class="text-left">Compte</th>
+                                <td class="text-left">{{ rs.compte }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-left">Raison Social</th>
+                                <td class="text-left">{{ rs.raison_social }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-left">Ville</th>
+                                <td class="text-left">{{ rs.ville }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-left">Releve</th>
+                                <td class="text-left">{{ rs.releve }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-left">Catalogue</th>
+                                <td class="text-left">{{ rs.catalog }}</td>
+                            </tr>
+                            <tr>
+                                <th class="text-left">Created</th>
+                                <td class="text-left">{{ rs.created }}</td>
+                            </tr>
+
+                        </table>
+                    {% endfor %}
+                    </div>
+
+                </div>
+			<!-- /row -->
+			</div>
+		<!-- /container -->
+		</div>
+
+	</div>
+
+
+
+
+{% endblock %}
+
+{% block footer %}{% include "_footer.html" %}{% endblock %}

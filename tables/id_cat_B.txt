@@ -1,0 +1,5 @@
+"id","parent_id","title","keywords","description","image","status","slug","lft","rght","tree_id","level","date_creat"
+1.00,,"DOLZ","DOLZ","-DOLZ",,"True","-DOLZ",1,2,1,0,6-8-2020 00:55:43
+2.00,0,"LPR","LPR","-LPR",,"True","-LPR",1,2,8,0,6-8-2020 00:55:40
+10.00,,"OSRAM","OSRAM","-OSRAM",,"True","-OSRAM",1,2,9,0,6-8-2020 00:55:40
+13.00,0,"SHMITTER","SHMITTER","-SHMITTER",,"True","-SHMITTER",1,2,10,0,6-8-2020 00:55:43

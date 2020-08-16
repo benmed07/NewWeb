@@ -1,0 +1,6 @@
+"id","parent","title","keywords","description","image","status","slug","lft","rght","tree_id","level","date_creat"
+2.00,0,"LPR","LPR","-LPR",,"True","-LPR","1","16",2,"0",6-8-2020 00:55:40
+3.00,"LPR","LPR/CYLINDRE_ROUE","LPR","LPR-CYLINDRE_ROUE",,"True","LPR-CYLINDRE_ROUE","2","3",2,"1",6-8-2020 00:55:44
+4.00,2,"DISQUE_FREIN","LPR","LPR-DISQUE_FREIN",,"True","LPR-DISQUE_FREIN","4","5",2,"1",6-8-2020 00:55:44
+5.00,2,"DIVERS","LPR","LPR-DIVERS",,"True","LPR-DIVERS","6","7",2,"1",6-8-2020 00:55:44
+11.00,10,"HALOGEN","OSRAM","OSRAM-HALOGEN",,"True","OSRAM-HALOGEN","2","3",3,"1",6-8-2020 00:55:44

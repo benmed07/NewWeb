@@ -1,0 +1,111 @@
+{% extends "_homebase.html" %}
+    {% load static %}
+
+{% block title %}Order Product List- {{setting.title}}{% endblock %}
+{% block description %}{{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock %}
+
+{% block header %}{% include "_header.html" %}{% endblock %}
+{% block sidebar %}{% include "_sidebar.html" %}{% endblock %}
+
+{% block slider %}{% include "_slider.html" %}{% endblock %}
+
+{% block body %}
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="/">Home</a></li>
+				<li class="active">Order Product List</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+		<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+					<div class="col-md-3">
+
+						{% include "user_panel.html" %}
+					</div>
+
+
+					<div class="col-md-9">
+						<div class="order-summary clearfix">
+							<div class="section-title">
+								<h3 class="title">Order Product List</h3>
+							</div>
+
+
+							<table class="shopping-cart-table table">
+
+								<tr>
+										<th class="text-left">Id</th>
+										<th class="text-left">Product Name</th>
+										<th class="text-left">Price</th>
+										<th class="text-left">Quantity</th>
+										<th class="text-left">Amount</th>
+										<th class="text-left">Status</th>
+										<th class="text-left">Date</th>
+										<th class="text-left">Detail</th>
+								</tr>
+
+								{% for rs in order_product %}
+									<tr>
+										<td class="text-left">
+											<a href="/product/{{rs.product_id}}/{{rs.product.slug}}">
+												{% if rs.variant.image > 0 %}
+													<img src="{{rs.variant.image}}" width="80px">
+												{% else %}
+													<img src="{{rs.product.image.url}}" width="80px">
+												{% endif %}
+											</a>
+										</td>
+										<td class="text-left">{{rs.product.title}} {{rs.variant.size}} {{rs.variant.color}}</td>
+										<td class="text-left">{{rs.price}}</td>
+										<td class="text-center">{{rs.quantity}}</td>
+										<td class="text-left">
+											{% if rs.product.variant == 'None' %}
+												{{rs.amount| stringformat:".2f"}}
+											{% else %}
+												{{rs.varamount| stringformat:".2f"}}
+											{% endif %}
+										</td>
+										<td class="text-left">{{rs.status}}</td>
+										<td class="text-left">{{rs.create_at}}</td>
+																				<td class="text-left"><a class="primary-btn"  href="/user/order_product_detail/{{rs.id}}/{{rs.order.id}}">Detail</a></td>
+
+									 </tr>
+								{% endfor %}
+
+							</table>
+
+						</div>
+
+					</div>
+
+
+
+
+
+
+
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /section -->
+
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}{% include "_footer.html" %}{% endblock %}

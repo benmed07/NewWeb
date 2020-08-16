@@ -1,0 +1,86 @@
+{% extends "_homebase.html" %}
+    {% load static %}
+
+{% block title %}Shop Releve- {{setting.title}}{% endblock %}
+{% block description %}{{setting.description}}{% endblock %}
+{% block keywords %}{{setting.keywords}}{% endblock %}
+
+{% block header %}{% include "_header.html" %}{% endblock %}
+{% block sidebar %}{% include "_sidebar.html" %}{% endblock %}
+
+{% block slider %}{% include "_slider.html" %}{% endblock %}
+
+{% block body %}
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="/">Home</a></li>
+				<li class="active">Relevé de compte</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+		<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+
+                <div class="col-md-3">
+					{% include 'user_panel.html' %}
+                </div>
+
+
+					<div class="col-md-9">
+						<div class="order-summary clearfix">
+							<div class="section-title">
+								<h3 class="title">Relevé de compte  de : <strong>{{profile_pro.raison_social}}, {{profile_pro.ville}},{{profile_pro.compte}}</strong></h3><br>
+							</div>
+							<div class="text-center"><h3>Sauf erreur ou omission, votre solde de  est : {{sld}}</h3></div>
+							<table class="shopping-cart-table table">
+								<thead>
+									<tr>
+										<th class="details">date_fac</th>
+										<th class="details">ref_fac</th>
+										<th class="details">mnt_fac</th>
+										<th class="details">mnt_regler</th>
+										<th class="details">solde</th>
+									</tr>
+								</thead>
+								<tbody>
+
+								{% for rs in rlv %}
+									<tr>
+										<td class="details">{{rs.date_fac}}</td>
+										<td class="details">{{rs.ref_fac}}</td>
+										<td class="details">{{rs.mnt_ttc}}</td>
+										<td class="details">{{rs.mnt_regler}}</td>
+										<td class="details">{{rs.solde}}</td>
+									</tr>
+								{% endfor %}
+								</tbody>
+
+									<tr>
+										<td class="details"></td>
+										<td class="details"></td>
+										<td class="details"></td>
+										<td class="details"><strong>TOTAL</strong></td>
+										<td class="text-left"><strong>{{sld  | stringformat:".2f"}}</strong></td>
+									</tr>
+
+							</table>
+						</div>
+
+					</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /section -->
+
+{% endblock %}
+
+{% block footer %}{% include "_footer.html" %}{% endblock %}
