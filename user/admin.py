@@ -10,7 +10,7 @@ class UserProfileAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 
 
 class ProfileProAdmin(ImportExportModelAdmin,admin.ModelAdmin):
-    list_display = ['user','raison_social','compte','ville','catalog','releve', 'status']
+    list_display = ['user','raison_social','compte','ville','catalog','releve', 'status', 'created']
     list_filter = ('catalog','releve','ville', 'created','status')
     list_editable = ('catalog',"releve","status",)
 

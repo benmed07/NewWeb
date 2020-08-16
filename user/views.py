@@ -216,7 +216,7 @@ def releve(request):
                     sld += rs.solde
 
     else :
-        messages.warning(request, "Profile professionnel doit être rempli.")
+        messages.warning(request, "Profile professionnel doit être rempli, Merci")
         return HttpResponseRedirect(url)
 
     context = {'rlv': rlv,
